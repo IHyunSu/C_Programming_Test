@@ -2,6 +2,7 @@
 #include <limits.h>
 
 int main() { 
+    
     printf("UNSIGNED_CHAR_MAX : %d\n", UCHAR_MAX);
     printf("UNSIGNED_CHAR_MIN : %d\n", 0);
     printf("UNSIGNED_SHORT_MAX : %d\n", USHRT_MAX);
