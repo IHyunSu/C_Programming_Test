@@ -7,12 +7,11 @@ int gcd(int a, int b);
 int main () {
     int a, b;
 
-    printf("두 정수를 입력하시오 >> ");
     scanf("%d %d", &a, &b);
 
     int result = gcd(a, b);
 
-    printf("\n두 정수의 최대 공약수는 %d입니다.\n", result);
+    printf("%d\n", result);
 
     return 0;
 }
