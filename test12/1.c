@@ -59,7 +59,7 @@ void create_array(double source1[], double source2[], int max_size, char file_na
         exit(1);
     }
 
-    fscanf(file, "%d", &max_size);
+    fscanf(file, "%*d");
 
     for (int i = 0; i < max_size; i++) {
         fscanf(file, "%lf", &num);
