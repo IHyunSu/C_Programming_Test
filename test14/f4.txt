@@ -1,0 +1,5 @@
+hamburger 900
+bulgogi 500
+sushi 700
+apple 95
+rice 130
