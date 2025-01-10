@@ -19,7 +19,7 @@ int main(int argc, char* argv[]) {
         result = d1 + d2;
     } else if (strcmp(oper, "-") == 0) {
         result = d1 - d2;
-    } else if (strcmp(oper, "*") == 0) {
+    } else if (strcmp(oper, '*') == 0) {
         result = d1 * d2;
     } else if (strcmp(oper, "/") == 0) {
         result = d1 / d2;
