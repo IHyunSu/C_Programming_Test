@@ -1,52 +1,34 @@
 #include <stdio.h>
-#include <string.h>
 #include <stdlib.h>
+#include <string.h>
 
-typedef struct {
-    char programName[5];
-    char operator[5];
-    int n1;
-    int n2;
-} calculator;
+int main(int c, char* arr[]) {
 
-void inputCal(calculator *p, double *result);
-void printCal(double result);
+    if (c != 4) {
+        printf("MENUAL: \"programname\" <operation> <num1> <num2>\n");
+        exit(1);
+    }
 
-int main () {
-    calculator p;
-    double result = 0;
+    char* operation = arr[1];
+    double a = atof(arr[2]);
+    double b = atof(arr[3]);
+    double result;
 
-    inputCal(&p, &result);
+    if (strcmp(operation, "+") == 0) {
+        result = a + b;
+    } 
+    else if (strcmp(operation, "-") == 0) {
+        result = a - b;
+    } 
+    else if (strcmp(operation, "*") == 0) {
+        result = a * b;
+    } 
+    else if (strcmp(operation, "/") == 0) {
+        result = a / b;
+    }
+
+    printf("Result = %.1f", result);
 
     return 0;
-}
 
-void inputCal(calculator *p, double *result) {
-    printf("> ");
-    scanf("%s %c %d %d", p->programName, p->operator, &p->n1, &p->n2);
-
-    if (p->n1 == '\0' || p->n2 == '\0')
-        printf("사용방법: 프로그램이름 <operation> <num1> <num2>\n");
-
-    if (strcmp(p->programName, "p1") == 0) {
-        if (strcmp(p->operator, "+") == 0) {
-            (*result) = ((double)p->n1 + p->n2);
-        } 
-        else if (strcmp(p->operator, "-") == 0) {
-            (*result) = ((double)p->n1 - p->n2);
-        } 
-        else if (strcmp(p->operator, "*") == 0) {
-            (*result) = ((double)p->n1 * p->n2);
-        } 
-        else if (strcmp(p->operator, "/") == 0) {
-            (*result) = ((double)p->n1 / p->n2);
-        } else {
-            printf("사용방법: 프로그램이름 <operation> <num1> <num2>\n");
-        }
-        printCal(*result);
-    }
-}
-
-void printCal(double result) {
-    printf("Result = %.2f\n", result);
 }
