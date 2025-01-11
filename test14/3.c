@@ -46,9 +46,11 @@ void input(Employee *e, int *count) {
         fgets(e[*count].location, MAX_LEN, file);
         e[*count].location[strlen(e[*count].location) - 1] = '\0';
         fscanf(file, "%d", &e[*count].salary);
-        if (fscanf(file, "%lf", &e[*count].incentive) != 1)
-            break;
+        fscanf(file, "%lf", &e[*count].incentive);
         (*count)++;
+        if (feof(file) != 0) {
+            break;
+        }
     }
 
     fclose(file);
